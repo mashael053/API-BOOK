@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Store</title>
+</head>
+<style>
+#results{
+
+display: grid;
+  grid-template-columns: repeat(1, 4fr);
+  gap :20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+
+}
+
+.book {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.book img {
+  width: 100px;
+  height: 150px;
+  margin-right: 10px;
+}
+.book h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.book p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+ img{
+width: 8vw;
+
+} 
+.res{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+        color: rgb(186, 186, 140);
+        font-family: 'Times New Roman', Times, serif;
+}
+@media (max-width: 768px) {
+  .book img {
+    width: 20vw; 
+  }
+
+  .book h2 {
+    font-size: 1rem;  
+  }
+
+  .book p {
+    font-size: 0.75rem; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .book img {
+    width: 30vw;  
+  }
+
+  .book h2 {
+    font-size: 0.875rem; 
+  }
+
+  .book p {
+    font-size: 0.625rem; 
+  }
+}
+</style>
+
+
+
+<body>
+  <h1>Welcome to books store</h1>
+<div id="results">
+
+</div>
+    <script >
+    let keyApi = ("FpZq5vGOqcWm8ndH5FNYThbCViy3EEZv")
+    fetch('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=FpZq5vGOqcWm8ndH5FNYThbCViy3EEZv')
+      .then(response => 
+        response.json() )
+      .then(data => {
+        const processedData = data.results.books.map(book => {
+          const image = book.book_image;
+          const title = book.title;
+          const author = book.author;
+          const description = book.description;
+
+          return { image, title, author, description };
+        });
+        const resultsElement = document.getElementById('results');
+        processedData.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add("res")
+        bookElement.innerHTML = `<img src="${book.image}" alt="${book.title}">
+                            <h2>${book.title}</h2>
+                            <p>${book.author}</p>
+                            <p>${book.description}</p>`;
+          resultsElement.appendChild(bookElement);
+        });
+      })
+      .catch(error => {
+        console.error('erorr is:' + error.message);
+      });
+
+    </script>
+</body>
+</html>
+
+

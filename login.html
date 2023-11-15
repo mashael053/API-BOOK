@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+    }
+
+    .title-page {
+        text-align: center;
+        color: rgb(186, 186, 140);
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .box input {
+        border-radius: 5px;
+        width: 15vw;
+        height: 5vh;
+        border: none;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(186, 186, 140);
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .but {
+        width: 15vw;
+        height: 5vh;
+        border: none;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: rgb(0, 0, 0);
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+    @media (max-width: 768px) {
+        .box input,
+        .but {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+
+        .box input,
+        .but {
+            width: 15vw;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="contact">
+            <img src="sign.png" alt="" srcset="" width="20%">
+        </div>
+        <form id="loginForm">
+            <div class="SignUp">
+                <h1 class="title-page">Login</h1>
+                <div class="box">
+                    <input type="text" id="username" name="username" required minlength="5" placeholder="user name"><br><br>
+                </div>
+                <div class="box">
+                    <input type="email" id="email" name="email" required placeholder="Email"><br><br>
+                </div>
+                <div class="box">
+                    <input type="password" id="password" name="password" required placeholder="password"><br><br>
+                    <a class="but" id="button" type="submit" href="book.html">Login</a>
+                    <a href="sign.html">
+                        <p class="sign-in">I have account</p>
+                    </a>
+        </form>
+
+
+
+        <script>
+            let name = "Mashael"
+            let emaill = "mshalalwajy08@gmail.com"
+            let passwordss = "1122334455"
+
+
+            document.getElementById("loginForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    var username = document.getElementById("username").value;
+            if (username.length < 5) {
+                alert("اسم المستخدم يجب أن يكون أكثر من 5 حروف");
+                return;
+            }
+            var email = document.getElementById("email").value;
+            if (!isValidEmail(email)) {
+                alert("البريد الإلكتروني غير صالح");
+                return;
+            }
+            var password = document.getElementById("password").value;
+            if (password.length < 8) {
+                alert("كلمة السر يجب أن تكون أكثر من 8 أحرف");
+                return;
+            }
+                    let keyApi = ("FpZq5vGOqcWm8ndH5FNYThbCViy3EEZv")
+                    fetch('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=FpZq5vGOqcWm8ndH5FNYThbCViy3EEZv')
+                        .then(response =>
+                            response.json())
+                        .then(data => {
+                        
+                                resultsElement.appendChild(bookElement);
+                                var username = document.getElementById("username").value;
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+                    if (username == name && email == emaill && password == passwordss) {
+                        window.location.href = 'mm.html';
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delet';
+                        window.location.href = 'mm.html';
+                        deleteButton.addEventListener('click', () => {
+                            deleteBook(book.title);
+                            bookElement.appendChild(deleteButton);
+                            });
+                        
+                        }
+                    }
+                
+                )
+            
+            })
+        })
+
+        </script>
+</body>
+
+</html>

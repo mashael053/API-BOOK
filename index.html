@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK STORE</title>
+</head>
+<style>
+
+    * {
+        padding: 0%;
+        margin: 0%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        box-sizing: border-box;
+    }
+    .hero {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .nav {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        padding-top: 40px;
+        padding-left: 6%;
+        padding-right: 6%;
+        background-color: rgb(186, 186, 140);
+    }
+
+    .footer {
+        background-color: rgb(186, 186, 140);
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        color: rgb(0, 0, 0);
+        font-weight: bolder;
+    }
+
+    .email-footer {
+        margin-top: 30px;
+    }
+
+    .logo {
+        color: rgb(9, 9, 9);
+        font-family: 'Times New Roman', Times, serif
+    }
+
+    .img {
+        margin-left: 20rem;
+        margin-top: 3%;
+        width: 50%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .but {
+        border: none;
+        color: rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(0, 0, 0);
+        width: 5vw;
+        height: 6vh;
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .nav {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+
+        .img {
+            margin-left: 0;
+            margin-top: 5%;
+            width: 80%;
+        }
+
+        .but {
+            width: 10vw;
+            height: 8vh;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav {
+            padding-top: 1.5rem;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .img {
+            margin-top: 10%;
+            width: 90%;
+        }
+
+        .but {
+            width: 15vw;
+            height: 10vh;
+        }
+    }
+</style>
+
+<body>
+    <div class="hero">
+        <nav class="nav">
+            <h2 class="logo">Books store</h2>
+            <ul>
+                <li><a href="login.html"><input class="but" id="but" type="submit" value="Login"></a></li>
+                <li> <a href="sinIn.html"><input class="but" id="but" type="submit" value="sign In"></a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to books store</h1>
+        <img class="img" src="img.png" alt="" srcset="">
+        <div class="div-footer">
+            <footer class="footer">
+                <h2 class="email-footer">mshalalwajy08@gmail.com</h2>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>

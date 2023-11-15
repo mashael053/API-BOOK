@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+</head>
+<style>
+        .container{
+        text-align: center; 
+    }
+
+    .title-page{
+        text-align: center;
+        color: rgb(186, 186, 140);
+        font-family: 'Times New Roman', Times, serif;
+    }
+.box input{
+    border-radius: 5px;
+    width: 15vw;
+        height: 5vh;
+        border: none;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-family: 'Times New Roman', Times, serif;
+}
+
+
+.but{
+    width: 15vw;
+        height: 5vh;
+        border: none;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: rgb(186, 186, 140);
+        font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 768px) {
+    .box input,
+    .but {
+        width: 80%;
+        height: 3em;
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="contact">
+            <img src="sign.png" alt="" srcset="" width="20%">
+        </div>
+        <form id="signupForm">
+            <div class="SignUp">
+                <h1 class="title-page">sign In</h1>
+                <div class="box">
+                    <input type="text" id="username" name="username" placeholder="user name"><br><br>
+                </div>
+          
+                <div class="box">
+                    <input type="password" id="password" name="password" placeholder="password"><br><br>
+                    <input class="but" id="button" type="submit" value="sin In">
+               
+        </form>
+
+        <script>
+            
+            document.getElementById("signupForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                signupForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+                    window.location.href = 'book.html';
+                });
+            })
+        </script>
+</body>
+
+</html>
